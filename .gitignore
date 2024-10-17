@@ -1,0 +1,9 @@
+*.log
+*.tmp
+*.exe
+*.dll
+node_modules/
+bin/
+obj/
+.env
+.DS_Store
