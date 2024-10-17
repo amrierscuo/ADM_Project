@@ -1,9 +1,17 @@
-*.log
-*.tmp
-*.exe
-*.dll
-node_modules/
-bin/
+# Cartelle di Visual Studio
+.vs/
+.vsconfig
+
+# Cartelle di Unity
+Library/
+Logs/
 obj/
-.env
-.DS_Store
+Packages/
+ProjectSettings/
+UserSettings/
+
+# File di compilazione temporanei
+*.suo
+*.user
+*.cache
+*.csproj.user
