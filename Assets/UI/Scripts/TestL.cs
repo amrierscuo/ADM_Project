@@ -16,7 +16,7 @@ public class TestL : MonoBehaviour {
                 score = 5
             };
 
-            WebRequests.PutJson("https://achievementleaderboard.azurewebsites.net/api/PutScore?code=zOr3dwn8MIR7OBCuUQWDYilR_ddqh65s6MKEXgz_gLT6AzFu557FwA==",
+            WebRequests.PutJson("https://achievementleaderboard.azurewebsites.net/api/PutScore?code=zOr3dwn8MIR7OBCuUQWDYilR_ddqh65s6MKEXgz_gLT6AzFu557FwP==",
                 JsonConvert.SerializeObject(leaderboardSingle),
                 (string error) => {
                     Debug.Log("Error: " + error);
@@ -37,7 +37,7 @@ public class TestL : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(KeyCode.T)) {
-            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetLeaderboard?code=AUNQ4RYIkTrhcNBmO4jGy5SmsnJfEbrBPREtEgUbc4DPAzFuVyRwjw==",
+            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetLeaderboard?code=AUNQ4RYIkTrhcNBmO4jGy5SmsnJfEbrBPREtEgUbc4DPAzFuVyRwjA==",
                 (string error) => {
                     Debug.Log("Error: " + error);
                 },
@@ -73,7 +73,7 @@ public class TestL : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
-            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetGamers?code=3Ee0PcdpAvH_FzfKL5OYNz_KF5AjquF2vemRPWkW4BwjAzFuHeGedA==",
+            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetGamers?code=3Ee0PcspAvH_FzfKL5OYNz_KF5AjquF2vemRPWkW4BwjAzFuHeGeQX==",
                 (string error) => {
                     Debug.Log("Error: " + error);
                 },
@@ -86,7 +86,7 @@ public class TestL : MonoBehaviour {
                 //Debug.Log("name :" + gamers.gamerSingleList[1].name);
                 //Debug.Log("TotAU :" + gamers.gamerSingleList[0].TotAU)
             });
-            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetGames?code=NBa-CrEBox2Ueu-nSQwUHW7PiBxnO8B-J7Hkw1Ofgff7AzFuL-Vmgw==",
+            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetGames?code=NBa-CrEBox2Ueu-nSQwUHW7PiBxnO8B-J7Hkw1Ofeff7AzFuL-Vmgw==",
             (string error) => {
                 Debug.Log("Error: " + error);},
             (string response) => {
@@ -99,7 +99,7 @@ public class TestL : MonoBehaviour {
                 //Debug.Log("gameRateo:" + games.gamesPlayedList[0].gameRateo);
                 //Debug.Log("AOPTPTG:" + games.gamesPlayedList[0].AOPTPTG);
             });
-            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetAchievements?code=IRp-oZgFMABmIKrs05JP4ftO8AFxBhCytzaRxXU0XNFnAzFu5IkFwA==",
+            WebRequests.Get("https://achievementleaderboard.azurewebsites.net/api/GetAchievements?code=IRp-oZgFMABmIKrs05JP4ftO8AFxBhCytzaRxXUOXNFnAzFu5IkFwQ==",
             (string error) => {
                 Debug.Log("Error: " + error);},
             (string response) => {
