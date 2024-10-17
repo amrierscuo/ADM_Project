@@ -1,0 +1,41 @@
+Azure Functions Core Tools:
+        AddScore: [GET,POST] http://localhost:7209/api/AddScore
+        GetLeaderboard: [GET,POST] http://localhost:7209/api/GetLeaderboard
+=================================================================================================================0
+get -> list[nameAchievement-scoreDifficulty-Timestamp] . 1-10
+addAchievement -> nameAchievement-scoreDifficulty-Timestamp + list[nameAchievement-scoreDifficulty-Timestamp] . 1-10
+=================================================================================================================0
+Pos Gamer      GamesPlayed(GP)       AchievementsUnlocked(AU)
+1   player a |
+2   player b |
+3   player c |
+4   player d |
+5   player e |
+6   player f |
+7   player g |
+8   player h |
+9   player i |
+10  player j |-> 1  game a [AmountOfPlayersThatPlayedThatGame] 1| //[{AOPTPTG}]
+	2  game b [AmountOfPlayersThatPlayedThatGame] 1|
+	3  game c [AmountOfPlayersThatPlayedThatGame] 1|
+	4  game d [AmountOfPlayersThatPlayedThatGame] 1|
+	5  game e [AmountOfPlayersThatPlayedThatGame] 1|
+	6  game f [AmountOfPlayersThatPlayedThatGame] 1|
+	7  game g [AmountOfPlayersThatPlayedThatGame] 1|
+	8  game h [AmountOfPlayersThatPlayedThatGame] 1|
+	9  game i [AmountOfPlayersThatPlayedThatGame] 1| //->NumberOfGamesPlayed
+	10 game j [AmountOfPlayersThatPlayedThatGame] 1| -> 1  achievement aa 100 [AmountOfPlayersThatUnlockedThatAchievement] 1 //[{AOPTUTA}] 
+				 	2  achievement ab 50  [AmountOfPlayersThatUnlockedThatAchievement] 1
+				 	3  achievement ac 100 [AmountOfPlayersThatUnlockedThatAchievement] 1
+ 				 	4  achievement ad 100 [AmountOfPlayersThatUnlockedThatAchievement] 1
+				 	5  achievement ae 100 [AmountOfPlayersThatUnlockedThatAchievement] 1
+				 	6  achievement af 100 [AmountOfPlayersThatUnlockedThatAchievement] 1
+				 	7  achievement ag 100 [AmountOfPlayersThatUnlockedThatAchievement] 1
+			 	 	8  achievement ah 100 [AmountOfPlayersThatUnlockedThatAchievement] 1 //->NumberOfAchievementsUnlocked
+		 		 	9  achievement ai 100 [AmountOfPlayersThatUnlockedThatAchievement] 1 //->achievementRarity={[scoreDifficulty*sqrt(AOPTPTG/AOPTUTA)]}
+				 	10 achievement aj 150 [AmountOfPlayersThatUnlockedThatAchievement] 1->achievementRateo={[achievementRarity/AOPTUTA]} //(achRateo)
+																																			
+                             				          -> GameRateo={sumOfAll(RatioWithFlag=1)/NumberOfAchievementsUnlocked}
+              ->Score = PlayerRateo-> {sumOfAll(GameRatioWithFlag=1)/NumberOfGamesPlayed}
+
+fromList->  1  Player a Achievements=100 Games=10 TotScoreD=10000 TotScoreR=??? Score=??? 
